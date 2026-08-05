@@ -1,6 +1,9 @@
 
 # Wix Dashboard Page Builder
 
+> **🛑 STOP — Read this first.**
+> If this page is a single-collection CRUD admin (table/grid view + entity form, no multi-collection joins, no custom business logic, no embedded scripts, no external APIs), STOP and use [AUTO_PATTERNS_DASHBOARD.md](AUTO_PATTERNS_DASHBOARD.md) instead. Auto-patterns is the default; this file documents the custom React variant for cases auto-patterns cannot handle, or when the user explicitly requested a custom React page.
+
 Dashboard pages appear in the site owner's Wix dashboard and enable site administrators to manage data, configure settings, and perform admin tasks.
 
 ## Scaffold
@@ -71,16 +74,6 @@ When building a dashboard page to configure an embedded script, see [Dynamic Par
 - Parameters are returned as strings - handle type conversions when loading
 - All parameters must be saved as strings (convert booleans/numbers to strings)
 - Use `withProviders` wrapper when dynamic parameters are present
-
-## Optional builder fields
-
-The CLI scaffolds the builder with `id`, `title`, `routePath`, and `component`. To customize sidebar placement and routing, edit the generated builder file to set:
-
-- `additionalRoutes` (string[]): extra routes leading to this page.
-- `sidebar.disabled` (boolean, default false): hide page from sidebar.
-- `sidebar.priority` (number): sidebar ordering; lower is higher priority.
-- `sidebar.whenActive.selectedPageId` (string): which page appears selected when this page is active.
-- `sidebar.whenActive.hideSidebar` (boolean): hide sidebar when this page is active.
 
 ## Examples
 
